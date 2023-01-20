@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadanie 9</title>
+</head>
+<script>
+    var isStopped = true;
+    function przycisk(counter){
+        if(!isStopped) {
+            console.log("Odliczanie zatrzymane");
+            return null;
+        }
+        else if(counter == -1) return null;
+        else {
+            console.log(counter);
+            setTimeout(()=>przycisk(counter-1),1000);
+        }
+    }
+</script>
+<body>
+    <button onclick="isStopped=true; przycisk(10);">Start</button>    
+    <button onclick="isStopped=false">Stop</button>
+</body>
+</html>
